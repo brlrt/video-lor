@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, request, flash
+from flask import Flask, render_template, request, flash
 from database import *
 import peewee
 
@@ -18,9 +18,28 @@ def root():
 @app.route("/watch", methods=["GET"])
 def loop_video():
     video_ID = request.args['v']
-    tlq = Loop.select().where(Loop.video_id == video_ID).first()
-    total_loops = tlq.video_loops
+    try:
+        tlq = Loop.select().where(Loop.video_id == video_ID).first()
+        total_loops = tlq.video_loops
+    except:
+        total_loops = 0 # Video never played before, default to 0
+
     return render_template("video.html", videoId=video_ID, globalTimesLooped=total_loops)
+
+@app.route("/mostpopular")
+def most_popular():
+    # Shows most popular videos, based on loops
+    i = 0
+    top_ten_vids = [];
+
+    for vid_loops in Loop.select().order_by(Loop.video_loops.desc()):
+        top_ten_vids.append({"loops": vid_loops.video_loops, "id": vid_loops.video_id})
+        i += 1
+        if i >= 9:
+            break
+    return render_template("leaderboard.html", top_vids=top_ten_vids)
+
+
 
 @app.route("/api/loopcount", methods=["GET", "POST"])
 def loop_count():

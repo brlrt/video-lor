@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="intro">
+    <h3>Top ten looped videos on LoR</h3>
+    <ol>
+        {% for video in top_vids %}
+            <li id="{{video.id | safe}}">
+                <img src="" id="image" /><br />
+                <a class="video_description" href="/watch?v={{video.id | safe}}"><span>Loading...</span></a>
+                <p>Loops: {{video.loops | safe}}<p>
+            </li>
+        {% endfor %}
+    </ol>
+</div>
+<script src="/static/leaderboard.js"></script>
+{% endblock %}

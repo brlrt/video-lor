@@ -21,3 +21,7 @@ iframe {
     margin: 0 auto;
     margin-top: 5%;
 }
+.video_description {
+    font-weight: bold;
+    font-size: 140%;
+}
