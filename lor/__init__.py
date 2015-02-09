@@ -20,7 +20,7 @@ def loop_video():
     video_ID = request.args['v']
     tlq = Loop.select().where(Loop.video_id == video_ID).first()
     total_loops = tlq.video_loops
-    return render_template("videopage.html", videoId=video_ID, globalTimesLooped=total_loops)
+    return render_template("video.html", videoId=video_ID, globalTimesLooped=total_loops)
 
 @app.route("/api/loopcount", methods=["GET", "POST"])
 def loop_count():
