@@ -1,0 +1,23 @@
+#ytLink {
+    width: 30%;
+    padding-right: 8px;
+}
+.intro {
+    text-align: center;
+}
+#loopNum {
+    color: #34495e;
+    text-align: right;
+}
+#error {
+    color: red;
+}
+.header {
+    padding-left: 5%;
+    margin-top: 5%;
+}
+iframe {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+}

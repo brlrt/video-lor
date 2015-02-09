@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>LoR</title>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="/static/materialize/js/materialize.min.js"></script>
+        <link href="/static/materialize/css/materialize.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/app.css" rel="stylesheet" type="text/css" />
+        {% block head %}
+        <!-- Additional head tags go here -->
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="green darken-3">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a class="brand-logo" href="/">LoR</a>
+                    <ul id="nav-mobile" class="right side-nav">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/">Most Played</a>
+                        </li>
+                    </ul>
+                    <a class="button-collapse" href="#" data-activates="nav-mobile">
+                        <i class="mdi-navigation-menu"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

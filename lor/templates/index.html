@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="intro">
+    <h1>Welcome to LoR</h1>
+    <br />
+    <p>To loop a video using LoR (ListenOnRepeat), replace "www.youtube.com" in a YouTube URL with this page's host.</p>
+    <p>You may also input a YouTube link in the form below to loop its respective video.</p>
+    <br />
+    <input placeholder="YouTube URL (e.g https://www.youtube.com/watch?v=dQw4w9WgXcQ)" type="text" id="ytLink" />
+    <a href="#" class="btn blue" id="showVideo">Loop Video</a>
+    <p id="error"></p>
+</div>
+<script src="/static/index.js"></script>
+{% endblock %}
